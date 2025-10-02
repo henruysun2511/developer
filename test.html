@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e1b4b, #0f766e, #111827);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            border-color: #a78bfa;
+            box-shadow: 0 0 25px rgba(167, 139, 250, 0.6);
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .card-content {
+                flex-direction: row;
+            }
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        @media (min-width: 768px) {
+            .card img {
+                width: 35%;
+                height: auto;
+            }
+        }
+
+        .info {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .info h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .frontend h2 {
+            color: #a78bfa;
+        }
+
+        .backend h2 {
+            color: #34d399;
+        }
+
+        .info ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .info ul li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .info span {
+            font-weight: bold;
+            color: #facc15;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-frontend {
+            background: #a78bfa;
+            color: #111;
+        }
+
+        .btn-frontend:hover {
+            background: #7c3aed;
+            color: #fff;
+        }
+
+        .btn-backend {
+            background: #34d399;
+            color: #111;
+        }
+
+        .btn-backend:hover {
+            background: #059669;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="card frontend">
+            <div class="card-content">
+                <img src="https://via.placeholder.com/300x300" alt="Frontend Dev">
+                <div class="info">
+                    <h2>Frontend Developer</h2>
+                    <ul>
+                        <li><span>Ngôn ngữ:</span> JavaScript, TypeScript</li>
+                        <li><span>CSS:</span> SCSS, Tailwind CSS</li>
+                        <li><span>Framework:</span> React, Next.js</li>
+                        <li><span>Component UI:</span> Ant Design</li>
+
+                    </ul>
+                    <a href="#" class="btn btn-frontend">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card backend">
+            <div class="card-content">
+                <img src="https://via.placeholder.com/300x300" alt="Backend Dev">
+                <div class="info">
+                    <h2>Backend Developer</h2>
+                    <ul>
+                        <li><span>Ngôn ngữ:</span> JavaScript, TypeScript</li>
+                        <li><span>Framework:</span> Node.js, NestJS</li>
+                        <li><span>Công cụ:</span> Docker</li>
+                    </ul>
+                    <a href="#" class="btn btn-backend">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
