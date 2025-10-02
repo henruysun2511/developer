@@ -78,19 +78,32 @@
         @media (min-width: 768px) {
             .card-content {
                 flex-direction: row;
+                align-items: stretch;
             }
         }
 
-        .card img {
+        .card-image {
             width: 100%;
-            height: 250px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            object-position: top;
         }
 
         @media (min-width: 768px) {
-            .card img {
+            .card-image {
                 width: 35%;
                 height: auto;
+                flex-shrink: 0;
+            }
+
+            .card-image img {
+                height: 100%;
             }
         }
 
@@ -166,10 +179,11 @@
 
 <body>
     <div class="container">
-
         <div class="card frontend">
             <div class="card-content">
-                <img src="https://via.placeholder.com/300x300" alt="Frontend Dev">
+                <div class="card-image">
+                    <img src="images/Screenshot 2025-10-03 001923.png" alt="Frontend Dev">
+                </div>
                 <div class="info">
                     <h2>Frontend Developer</h2>
                     <ul>
@@ -177,16 +191,17 @@
                         <li><span>CSS:</span> SCSS, Tailwind CSS</li>
                         <li><span>Framework:</span> React, Next.js</li>
                         <li><span>Component UI:</span> Ant Design</li>
-
                     </ul>
-                    <a href="#" class="btn btn-frontend">Liên hệ</a>
+                    <a href="https://www.facebook.com/huyy.nhat.927/photos_by" class="btn btn-frontend">Liên hệ</a>
                 </div>
             </div>
         </div>
 
         <div class="card backend">
             <div class="card-content">
-                <img src="https://via.placeholder.com/300x300" alt="Backend Dev">
+                <div class="card-image">
+                    <img src="images/Screenshot 2025-10-03 000907.png" alt="Backend Dev">
+                </div>
                 <div class="info">
                     <h2>Backend Developer</h2>
                     <ul>
@@ -194,11 +209,10 @@
                         <li><span>Framework:</span> Node.js, NestJS</li>
                         <li><span>Công cụ:</span> Docker</li>
                     </ul>
-                    <a href="#" class="btn btn-backend">Liên hệ</a>
+                    <a href="https://www.facebook.com/angtu.732347" class="btn btn-backend">Liên hệ</a>
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 
